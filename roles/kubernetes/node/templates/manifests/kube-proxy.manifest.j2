@@ -54,6 +54,8 @@ spec:
     hostPath:
 {% if ansible_os_family == 'RedHat' %}
       path: /etc/pki/tls
+{% elif ansible_os_family == 'Debian' %}
+      path: /etc/ssl/certs
 {% else %}
       path: /usr/share/ca-certificates
 {% endif %}
